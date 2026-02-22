@@ -1,4 +1,4 @@
-name: bump-cxpatcher-cask
+name: bump-samsung-jellyfin-installer-cask
 on:
   schedule:
     - cron: '0 8 * * *'
@@ -20,10 +20,10 @@ jobs:
 
           # 2. Extract versions
           # Get what's available on GitHub
-          LATEST_VERSION=$(brew livecheck italomandara/cxpatcher/cxpatcher --json | jq -r '.[0].version.latest')
+          LATEST_VERSION=$(brew livecheck Jellyfin2Samsung/homebrew-samsung-jellyfin-installer/samsung-jellyfin-installer --json | jq -r '.[0].version.latest')
           
           # Get what is currently in your Repo
-          CURRENT_VERSION=$(brew info --json=v2 italomandara/cxpatcher/cxpatcher | jq -r '.casks[0].version')
+          CURRENT_VERSION=$(brew info --json=v2 Jellyfin2Samsung/homebrew-samsung-jellyfin-installer/samsung-jellyfin-installer | jq -r '.casks[0].version')
 
           echo "Version on GitHub: $LATEST_VERSION"
           echo "Version in your Tap: $CURRENT_VERSION"
@@ -36,4 +36,4 @@ jobs:
 
           # 4. Perform the bump
           # Using full tap/cask path to avoid ambiguity
-          brew bump-cask-pr --version="$LATEST_VERSION" italomandara/cxpatcher/cxpatcher
+          brew bump-cask-pr --version="$LATEST_VERSION" Jellyfin2Samsung/homebrew-samsung-jellyfin-installer/samsung-jellyfin-installer

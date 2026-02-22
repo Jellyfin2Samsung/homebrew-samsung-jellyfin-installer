@@ -1,5 +1,5 @@
-# homebrew-CXPatcher
+# homebrew-Samsung-Jellyfin-Installer
 
-Install CXPatcher with:
+Install Samsung Jellyfin Installer with:
 
-    brew install --cask --no-quarantine italomandara/CXPatcher/cxpatcher
+    brew install --cask --no-quarantine Jellyfin2Samsung/homebrew-samsung-jellyfin-installer/samsung-jellyfin-installer
